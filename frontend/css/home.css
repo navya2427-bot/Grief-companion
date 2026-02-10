@@ -1,0 +1,214 @@
+/* =========================
+   DASHBOARD – VIBRANT & MODERN THEME
+========================= */
+
+:root {
+    --bg-main: #f0f4ff;
+    --bg-panel: rgba(255, 255, 255, 0.78);
+
+    --primary: #6366f1;           /* indigo */
+    --primary-dark: #4f46e5;
+    --primary-glow: #818cf8;
+
+    --accent: #ec4899;             /* pink for highlights */
+    --accent-soft: #f472b6;
+
+    --danger: #f43f5e;
+    --danger-hover: #e11d48;
+
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+
+    --border-soft: rgba(165, 180, 252, 0.4);
+    --shadow-soft: 0 10px 30px rgba(99, 102, 241, 0.12);
+    --shadow-hover: 0 16px 40px rgba(99, 102, 241, 0.22);
+    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+/* =========================
+   GLOBAL BACKGROUND + ANIMATION
+========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 50%, #e0f2fe 100%);
+    background-size: 180% 180%;
+    animation: gradientFlow 18s ease infinite;
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+@keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+.app {
+    display: flex;
+    height: 100vh;
+    padding: 24px;
+    gap: 24px;
+    backdrop-filter: blur(1px);
+}
+
+/* =========================
+   PANELS – Glassmorphism + lift
+========================= */
+.panel {
+    background: var(--bg-panel);
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-glass);
+    padding: 28px;
+    animation: appearUp 0.9s ease-out forwards;
+}
+
+@keyframes appearUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Staggered animation for left & right */
+.panel.left  { animation-delay: 0.1s; }
+.panel.right { animation-delay: 0.3s; }
+
+/* LEFT PANEL */
+.panel.left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* RIGHT PANEL */
+.panel.right {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+}
+
+/* =========================
+   USER INFO
+========================= */
+.user-info {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(165, 180, 252, 0.3);
+}
+
+.user-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #6366f1, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+#userEmail {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    opacity: 0.9;
+}
+
+/* =========================
+   NAV BUTTONS – colorful & bouncy
+========================= */
+.nav-buttons button {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    letter-spacing: 0.3px;
+}
+
+.nav-buttons button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: var(--shadow-hover);
+}
+
+.nav-buttons button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Disabled */
+.nav-buttons button:disabled {
+    background: #cbd5e1;
+    color: #94a3b8;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+}
+
+/* Logout – red accent */
+.nav-buttons button:last-child {
+    background: var(--danger);
+    box-shadow: 0 4px 14px rgba(244, 63, 94, 0.3);
+}
+
+.nav-buttons button:last-child:hover {
+    background: var(--danger-hover);
+    box-shadow: 0 12px 28px rgba(244, 63, 94, 0.35);
+}
+
+/* =========================
+   GRAPH / WELCOME AREA – nicer card
+========================= */
+.graph-box {
+    width: 92%;
+    height: 86%;
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.85), rgba(240,244,255,0.7));
+    border: 2px dashed rgba(165, 180, 252, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: inset 0 2px 20px rgba(165, 180, 252, 0.08);
+    transition: all 0.4s ease;
+}
+
+.graph-box:hover {
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.18);
+}
+
+#welcomeMessage {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    padding: 0 30px;
+    opacity: 0.92;
+}
+
+#welcomeMessage br {
+    margin-bottom: 8px;
+}
+
+/* Optional: subtle shine on canvas when shown */
+#moodChart {
+    border-radius: 16px;
+}

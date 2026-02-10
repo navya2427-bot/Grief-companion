@@ -1,0 +1,152 @@
+/* =========================
+   LOGIN PAGE – LIGHT BLUE THEME
+========================= */
+
+:root {
+    --bg-main: #e8f2ff;
+    --bg-card: #ffffff;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-active: #1e40af;
+
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+
+    --border-color: #c7d2fe;
+    --shadow-card: 0 22px 42px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================
+   GLOBAL + ANIMATED BACKGROUND
+========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        120deg,
+        #e8f2ff,
+        #dbeafe,
+        #e0f2fe
+    );
+    background-size: 300% 300%;
+    animation: bgMove 13s ease infinite;
+    color: var(--text-main);
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    width: 320px;
+    margin: 110px auto;
+    background: var(--bg-card);
+    padding: 26px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    animation: floatIn 0.8s ease forwards;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h2 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* =========================
+   INPUTS (FOCUS EFFECT)
+========================= */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    transform: scale(1.02);
+}
+
+/* =========================
+   BUTTON (HOVER + CLICK)
+========================= */
+button {
+    width: 100%;
+    padding: 11px;
+    margin-top: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.35);
+}
+
+button:active {
+    background: var(--primary-active);
+    transform: translateY(1px) scale(0.97);
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   LINKS
+========================= */
+.link {
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.link a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+#msg {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #dc2626;
+}

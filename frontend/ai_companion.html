@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Companion</title>
+    <link rel="stylesheet" href="css/ai_companion.css">
+</head>
+<body onload="requireAuth()">
+
+<div class="app single">
+
+    <!-- Chat Area -->
+    <div class="chat-box" id="chatBox">
+        <div class="bot-msg">
+            Hi, I’m here with you. You can talk freely.
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <select id="aiStyle">
+            <option value="friend">Like a friend</option>
+            <option value="listener">Just listen</option>
+            <option value="coach">Gentle coach</option>
+        </select>
+
+        <select id="aiTone">
+            <option value="non-judging">Non-judging</option>
+            <option value="supportive">Supportive</option>
+            <option value="neutral">Neutral</option>
+            <option value="positive">Positive</option>
+        </select>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type what you feel..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Back -->
+    <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/chat.js"></script>
+<script>
+function goBack() {
+    window.location.href = "home.html";
+}
+</script>
+
+</body>
+</html>

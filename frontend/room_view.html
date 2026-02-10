@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="requireAuth(); loadRoom();">
+
+<div class="app single">
+
+    <h3 id="title"></h3>
+
+    <div class="chat-box" id="messages"></div>
+
+    <div class="chat-input">
+        <input id="msg" placeholder="Write a message..." />
+        <button onclick="send()">Send</button>
+    </div>
+
+    <button onclick="goBack()">← Back</button>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/room_view_phase1.js"></script>
+</body>
+</html>

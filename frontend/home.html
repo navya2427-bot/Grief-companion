@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body onload="requireAuth()">
+
+<div class="app">
+
+    <!-- LEFT PANEL -->
+    <div class="panel left">
+
+        <div class="user-info">
+            <h3>Dashboard</h3>
+            <p id="userEmail">Loading...</p>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="goTo('ai_companion.html')">🧠 AI Companion</button>
+            <button onclick="goTo('rooms.html')">👥 Rooms</button>
+            <button onclick="goTo('Journal.html')">My Journal</button>
+            <button onclick="logout()">🚪 Logout</button>
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="panel right">
+        <div class="graph-box">
+            <canvas id="moodChart" style="display:none;"></canvas>
+
+            <p id="welcomeMessage" style="display:none; text-align:center;">
+                🌱 Welcome to your first day.<br>
+                Your progress will appear here.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/home.js"></script>
+
+</body>
+</html>

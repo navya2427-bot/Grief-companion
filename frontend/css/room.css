@@ -1,0 +1,194 @@
+/* =====================================
+   ROOM CHAT – PURPLE / BLUE THEME
+===================================== */
+
+:root {
+    --bg-main: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e1b4b,
+        #312e81
+    );
+
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+
+    --ai-bubble: rgba(255, 255, 255, 0.9);
+    --user-bubble: linear-gradient(135deg, #3b82f6, #6366f1);
+
+    --text-light: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #c7d2fe;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-light);
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+.app.single {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    gap: 14px;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-btn {
+    align-self: flex-start;
+    padding: 10px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.85);
+    color: #1e1b4b;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: white;
+    box-shadow: 0 6px 18px rgba(59,130,246,0.35);
+}
+
+/* =========================
+   ROOM HEADER
+========================= */
+#roomTitle {
+    margin: 6px 0 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#roomMeta {
+    margin: 0 0 6px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   CHAT BOX
+========================= */
+.chat-box {
+    flex: 1;
+    padding: 20px 24px;
+    overflow-y: auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: rgba(99,102,241,0.6);
+    border-radius: 10px;
+}
+
+/* =========================
+   MESSAGE BUBBLES
+========================= */
+.chat-box > div {
+    max-width: 78%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    animation: popIn 0.25s ease;
+}
+
+/* Incoming message */
+.chat-box > div:not(.mine) {
+    align-self: flex-start;
+    background: var(--ai-bubble);
+    color: var(--text-dark);
+    border-bottom-left-radius: 6px;
+}
+
+/* My message */
+.chat-box > div.mine {
+    align-self: flex-end;
+    background: var(--user-bubble);
+    color: white;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 8px 22px rgba(59,130,246,0.5);
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   INPUT AREA
+========================= */
+.chat-input {
+    display: flex;
+    gap: 12px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 18px;
+    border: none;
+    font-size: 1rem;
+}
+
+.chat-input input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.4);
+}
+
+.chat-input button {
+    padding: 0 28px;
+    border-radius: 18px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    transition: all 0.2s ease;
+}
+
+.chat-input button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(59,130,246,0.6);
+}
+
+.chat-input button:active {
+    transform: scale(0.96);
+}
+
+/* =========================
+   MUTED TEXT
+========================= */
+.muted {
+    color: var(--text-muted);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rooms</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/rooms.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- LEFT PANEL (30%) -->
+    <div class="panel left">
+
+        <div class="user-info">
+            <h3>My Rooms</h3>
+        </div>
+
+        <!-- CREATE ROOM BUTTON -->
+        <div class="panel-content">
+            <button class="btn" onclick="toggleCreateRoom()">＋ Create Room</button>
+        </div>
+
+        <!-- CREATE ROOM FORM -->
+        <div id="createRoomBox" class="panel-content" style="display:none;">
+            <input id="roomName" placeholder="Room name">
+            <input id="roomTopic" placeholder="Topic">
+            <textarea id="roomDesc" placeholder="Description (optional)"></textarea>
+            <button class="btn" onclick="createRoom()">Create</button>
+        </div>
+
+        <!-- MY ROOMS LIST -->
+        <div class="panel-content">
+            <div id="myRooms"></div>
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL (70%) -->
+    <div class="panel right">
+        <div class="panel-content">
+            <h3>Available Rooms</h3>
+            <div id="allRooms"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/rooms.js"></script>
+</body>
+</html>

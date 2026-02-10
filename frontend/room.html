@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/room.css">
+</head>
+<body>
+
+<div class="app single">
+
+    <button class="back-btn" onclick="goBack()">← Back to Rooms</button>
+
+    <!-- ROOM INFO -->
+    <h3 id="roomTitle"></h3>
+    <p class="muted" id="roomMeta"></p>
+
+    <!-- CHAT -->
+    <div class="chat-box" id="chatBox"></div>
+
+    <!-- MESSAGE INPUT -->
+    <div class="chat-input">
+        <input id="messageInput" placeholder="Write your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="js/room.js"></script>
+</body>
+</html>

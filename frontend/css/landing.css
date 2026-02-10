@@ -1,0 +1,128 @@
+/* =========================
+   LANDING PAGE – LIGHT BLUE THEME
+========================= */
+
+:root {
+    --bg-main: #e8f2ff;
+    --bg-card: #ffffff;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --secondary: #64748b;
+    --secondary-hover: #475569;
+
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+
+    --shadow-card: 0 25px 45px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================
+   GLOBAL BACKGROUND ANIMATION
+========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        120deg,
+        #e8f2ff,
+        #dbeafe,
+        #e0f2fe
+    );
+    background-size: 300% 300%;
+    animation: bgMove 14s ease infinite;
+    color: var(--text-main);
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   CENTERED CONTAINER
+========================= */
+.container {
+    width: 360px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.center {
+    margin-top: 150px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TEXT
+========================= */
+h1 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* =========================
+   BUTTON GROUP
+========================= */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =========================
+   BUTTONS (HOVER + CLICK)
+========================= */
+.btn {
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.35);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Secondary button */
+.btn.secondary {
+    background: var(--secondary);
+}
+
+.btn.secondary:hover {
+    background: var(--secondary-hover);
+    box-shadow: 0 12px 22px rgba(100, 116, 139, 0.35);
+}

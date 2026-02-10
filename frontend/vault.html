@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Vault</title>
+    <link rel="stylesheet" href="css/vault.css">
+</head>
+<body>
+
+<div class="app">
+
+    <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <h2>🗂 My Vault</h2>
+    <p class="subtitle">
+        Files are stored securely in your vault.
+        Text & images can be opened. Others are downloadable.
+    </p>
+
+    <!-- LIST HEADER -->
+    <div class="vault-header">
+        <span>Name</span>
+        <span>Type</span>
+        <span>Actions</span>
+    </div>
+
+    <!-- FILE LIST -->
+    <div id="fileList" class="file-list">
+        <p class="muted">No files uploaded yet</p>
+    </div>
+
+</div>
+
+<!-- FLOATING PLUS BUTTON -->
+<button class="add-btn" onclick="toggleUploader()">➕</button>
+
+<!-- UPLOADER MODAL -->
+<div id="uploader" class="uploader hidden">
+    <div class="drop-zone" id="dropZone">
+        <p>Drag & drop files here</p>
+        <span>or</span><br>
+        <input type="file" id="fileInput" multiple>
+        <br><br>
+        <button onclick="toggleUploader()">Close</button>
+    </div>
+</div>
+
+<script src="js/vault.js"></script>
+</body>
+</html>
